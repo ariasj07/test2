@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Factura Simulada</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-color: #f4f4f4;
+  }
+  .factura {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  .datos-emisor, .datos-cliente {
+    margin-bottom: 20px;
+  }
+  .datos-emisor p, .datos-cliente p {
+    margin: 4px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  table th, table td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: center;
+  }
+  table th {
+    background-color: #eee;
+  }
+  .totales {
+    text-align: right;
+    margin-right: 10px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<div class="factura">
+  <h1>Factura</h1>
+  <div class="datos-emisor">
+    <h2>Emisor</h2>
+    <p><strong>Nombre:</strong> Josué Arias (TMNN)</p>
+    <p><strong>Dirección:</strong> Costa Rica</p>
+    <p><strong>Teléfono:</strong> 7207 0000</p>
+    <p><strong>Email:</strong> —</p>
+  </div>
+
+  <div class="datos-cliente">
+    <h2>Cliente</h2>
+    <p><strong>Nombre:</strong> Juan Pérez</p>
+    <p><strong>Dirección:</strong> Avenida Central 100, Ciudad</p>
+    <p><strong>Teléfono:</strong> +52 55 8765 4321</p>
+    <p><strong>Email:</strong> juan.perez@email.com</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Producto A</td>
+        <td>2</td>
+        <td>$150.00</td>
+        <td>$300.00</td>
+      </tr>
+      <tr>
+        <td>Producto B</td>
+        <td>1</td>
+        <td>$250.00</td>
+        <td>$250.00</td>
+      </tr>
+      <tr>
+        <td>Servicio C</td>
+        <td>3</td>
+        <td>$100.00</td>
+        <td>$300.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="totales"><strong>Subtotal:</strong> $850.00</p>
+  <p class="totales"><strong>IVA (16%):</strong> $136.00</p>
+  <p class="totales"><strong>Total a Pagar:</strong> $986.00</p>
+
+  <div class="footer">
+    <p>Gracias por su compra.</p>
+    <p>Factura generada el: <span id="fecha"></span></p>
+  </div>
+</div>
+
+<script>
+  const fecha = new Date();
+  document.getElementById('fecha').textContent = fecha.toLocaleDateString();
+</script>
+
+</body>
+</html>
